@@ -1,6 +1,6 @@
 package gev
 
-import "github.com/Allenxuxu/gev/eventloop"
+import "github.com/nm-morais/gev/eventloop"
 
 type LoadBalanceStrategy func([]*eventloop.EventLoop) *eventloop.EventLoop
 

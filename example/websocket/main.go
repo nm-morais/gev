@@ -9,10 +9,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Allenxuxu/gev"
-	"github.com/Allenxuxu/gev/connection"
-	"github.com/Allenxuxu/gev/plugins/websocket/ws"
-	"github.com/Allenxuxu/gev/plugins/websocket/ws/util"
+	"github.com/nm-morais/gev"
+	"github.com/nm-morais/gev/connection"
+	"github.com/nm-morais/gev/plugins/websocket/ws"
+	"github.com/nm-morais/gev/plugins/websocket/ws/util"
 )
 
 var (
@@ -83,12 +83,12 @@ func (s *example) OnMessage(c *connection.Connection, data []byte) (messageType 
 		if err != nil {
 			panic(err)
 		}
-		if err := c.Send(msg); err != nil {
+		if err := c.Send(msg, nil); err != nil {
 			msg, err := util.PackCloseData(err.Error())
 			if err != nil {
 				panic(err)
 			}
-			if e := c.Send(msg); e != nil {
+			if e := c.Send(msg, nil); e != nil {
 				panic(e)
 			}
 		}
@@ -97,7 +97,7 @@ func (s *example) OnMessage(c *connection.Connection, data []byte) (messageType 
 		if err != nil {
 			panic(err)
 		}
-		if e := c.Send(msg); e != nil {
+		if e := c.Send(msg, nil); e != nil {
 			panic(e)
 		}
 	case 3:
@@ -109,7 +109,7 @@ func (s *example) OnMessage(c *connection.Connection, data []byte) (messageType 
 				if err != nil {
 					panic(err)
 				}
-				if e := c.Send(msg); e != nil {
+				if e := c.Send(msg, nil); e != nil {
 					panic(e)
 				}
 			}()
@@ -142,7 +142,7 @@ func loopBoardcast(serv *example) {
 				serv.Unlock()
 				continue
 			}
-			_ = session.conn.Send(msg)
+			_ = session.conn.Send(msg, nil)
 		}
 		serv.Unlock()
 

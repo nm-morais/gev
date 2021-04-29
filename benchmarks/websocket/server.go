@@ -4,12 +4,12 @@ import (
 	"flag"
 	"strconv"
 
-	"github.com/Allenxuxu/gev/log"
+	"github.com/nm-morais/gev/log"
 
-	"github.com/Allenxuxu/gev"
-	"github.com/Allenxuxu/gev/connection"
-	"github.com/Allenxuxu/gev/plugins/websocket"
-	"github.com/Allenxuxu/gev/plugins/websocket/ws"
+	"github.com/nm-morais/gev"
+	"github.com/nm-morais/gev/connection"
+	"github.com/nm-morais/gev/plugins/websocket"
+	"github.com/nm-morais/gev/plugins/websocket/ws"
 )
 
 type example struct {

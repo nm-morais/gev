@@ -7,12 +7,12 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/Allenxuxu/gev/eventloop"
-	"github.com/Allenxuxu/gev/log"
-	"github.com/Allenxuxu/gev/poller"
 	"github.com/Allenxuxu/ringbuffer"
 	"github.com/Allenxuxu/toolkit/sync/atomic"
 	"github.com/RussellLuo/timingwheel"
+	"github.com/nm-morais/gev/eventloop"
+	"github.com/nm-morais/gev/log"
+	"github.com/nm-morais/gev/poller"
 	"golang.org/x/sys/unix"
 )
 
@@ -112,14 +112,21 @@ func (c *Connection) Connected() bool {
 }
 
 // Send 用来在非 loop 协程发送
-func (c *Connection) Send(buffer []byte) error {
+func (c *Connection) Send(buffer []byte, callback func(error)) error {
 	if !c.connected.Get() {
+		if callback != nil {
+			callback(ErrConnectionClosed)
+		}
 		return ErrConnectionClosed
 	}
 
 	c.loop.QueueInLoop(func() {
 		if c.connected.Get() {
-			c.sendInLoop(c.protocol.Packet(c, buffer))
+			c.sendInLoop(c.protocol.Packet(c, buffer), callback)
+		} else {
+			if callback != nil {
+				callback(ErrConnectionClosed)
+			}
 		}
 	})
 	return nil
@@ -229,7 +236,7 @@ func (c *Connection) handleRead(fd int) (closed bool) {
 	}
 
 	if len(buf) != 0 {
-		closed = c.sendInLoop(buf)
+		closed = c.sendInLoop(buf, nil)
 	}
 	return
 }
@@ -284,7 +291,7 @@ func (c *Connection) handleClose(fd int) {
 	}
 }
 
-func (c *Connection) sendInLoop(data []byte) (closed bool) {
+func (c *Connection) sendInLoop(data []byte, callback func(error)) (closed bool) {
 	if !c.outBuffer.IsEmpty() {
 		_, _ = c.outBuffer.Write(data)
 	} else {
@@ -292,9 +299,11 @@ func (c *Connection) sendInLoop(data []byte) (closed bool) {
 		if err != nil && err != unix.EAGAIN {
 			c.handleClose(c.fd)
 			closed = true
+			if callback != nil {
+				callback(err)
+			}
 			return
 		}
-
 		if n <= 0 {
 			_, _ = c.outBuffer.Write(data)
 		} else if n < len(data) {
@@ -304,8 +313,8 @@ func (c *Connection) sendInLoop(data []byte) (closed bool) {
 		if !c.outBuffer.IsEmpty() {
 			_ = c.loop.EnableReadWrite(c.fd)
 		}
+		callback(nil)
 	}
-
 	return
 }
 

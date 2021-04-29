@@ -3,7 +3,7 @@ package util
 import (
 	"unicode/utf8"
 
-	"github.com/Allenxuxu/gev/plugins/websocket/ws"
+	"github.com/nm-morais/gev/plugins/websocket/ws"
 )
 
 // PackData 封装 websocket message 数据包

@@ -8,14 +8,14 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Allenxuxu/gev/log"
+	"github.com/nm-morais/gev/log"
 
-	"github.com/Allenxuxu/gev"
-	"github.com/Allenxuxu/gev/connection"
-	"github.com/Allenxuxu/gev/plugins/websocket/ws"
-	"github.com/Allenxuxu/gev/plugins/websocket/ws/util"
 	"github.com/Allenxuxu/toolkit/sync"
 	"github.com/Allenxuxu/toolkit/sync/atomic"
+	"github.com/nm-morais/gev"
+	"github.com/nm-morais/gev/connection"
+	"github.com/nm-morais/gev/plugins/websocket/ws"
+	"github.com/nm-morais/gev/plugins/websocket/ws/util"
 	"github.com/stretchr/testify/assert"
 	"golang.org/x/net/websocket"
 )
@@ -39,12 +39,12 @@ func (s *wsExample) OnMessage(c *connection.Connection, data []byte) (messageTyp
 		if err != nil {
 			panic(err)
 		}
-		if err := c.Send(msg); err != nil {
+		if err := c.Send(msg, nil); err != nil {
 			msg, err := util.PackCloseData(err.Error())
 			if err != nil {
 				panic(err)
 			}
-			if e := c.Send(msg); e != nil {
+			if e := c.Send(msg, nil); e != nil {
 				panic(e)
 			}
 		}
@@ -53,7 +53,7 @@ func (s *wsExample) OnMessage(c *connection.Connection, data []byte) (messageTyp
 		if err != nil {
 			panic(err)
 		}
-		if e := c.Send(msg); e != nil {
+		if e := c.Send(msg, nil); e != nil {
 			panic(e)
 		}
 	}

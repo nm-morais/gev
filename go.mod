@@ -1,15 +1,16 @@
-module github.com/Allenxuxu/gev
+module github.com/nm-morais/gev
 
 go 1.14
 
 require (
-	github.com/Allenxuxu/eviop v0.0.0-20190901123806-035c218f739a
+	github.com/Allenxuxu/eviop v0.0.0-20190919234625-d421704e9f73
 	github.com/Allenxuxu/ringbuffer v0.0.9
 	github.com/Allenxuxu/toolkit v0.0.1
 	github.com/RussellLuo/timingwheel v0.0.0-20201029015908-64de9d088c74
 	github.com/gobwas/httphead v0.0.0-20180130184737-2c6c146eadee
 	github.com/gobwas/pool v0.2.0
 	github.com/golang/protobuf v1.4.3
+	github.com/kavu/go_reuseport v1.5.0 // indirect
 	github.com/libp2p/go-reuseport v0.0.1
 	github.com/panjf2000/gnet v1.4.0
 	github.com/pkg/errors v0.9.1 // indirect

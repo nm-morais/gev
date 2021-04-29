@@ -9,5 +9,5 @@ name = "go"
 enabled = true
 
   [analyzers.meta]
-  import_paths = ["github.com/Allenxuxu/gev"]
+  import_paths = ["github.com/nm-morais/gev"]
 

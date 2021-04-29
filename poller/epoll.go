@@ -5,8 +5,8 @@ package poller
 import (
 	"runtime"
 
-	"github.com/Allenxuxu/gev/log"
 	"github.com/Allenxuxu/toolkit/sync/atomic"
+	"github.com/nm-morais/gev/log"
 	"golang.org/x/sys/unix"
 )
 

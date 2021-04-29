@@ -2,9 +2,10 @@ package main
 
 import (
 	"encoding/binary"
-	"github.com/Allenxuxu/gev/connection"
+
 	"github.com/Allenxuxu/ringbuffer"
 	"github.com/gobwas/pool/pbytes"
+	"github.com/nm-morais/gev/connection"
 )
 
 const exampleHeaderLen = 4

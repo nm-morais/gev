@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Allenxuxu/gev/connection"
-	"github.com/Allenxuxu/gev/log"
 	"github.com/Allenxuxu/toolkit/sync"
 	"github.com/Allenxuxu/toolkit/sync/atomic"
+	"github.com/nm-morais/gev/connection"
+	"github.com/nm-morais/gev/log"
 )
 
 type example struct {
@@ -29,7 +29,7 @@ func (s *example) OnMessage(c *connection.Connection, ctx interface{}, data []by
 
 	//out = data
 	msg := append([]byte{}, data...)
-	if err := c.Send(msg); err != nil {
+	if err := c.Send(msg, nil); err != nil {
 		panic(err)
 	}
 	return
@@ -203,7 +203,7 @@ type example1 struct {
 
 func (s *example1) OnConnect(c *connection.Connection) {
 	s.Count.Add(1)
-	_ = c.Send([]byte("hello gev"))
+	_ = c.Send([]byte("hello gev"), nil)
 	//log.Println(" OnConnect ： ", c.PeerAddr())
 }
 
@@ -211,7 +211,7 @@ func (s *example1) OnMessage(c *connection.Connection, ctx interface{}, data []b
 	//log.Println("OnMessage")
 
 	//out = data
-	if err := c.Send(data); err != nil {
+	if err := c.Send(data, nil); err != nil {
 		panic(err)
 	}
 	return

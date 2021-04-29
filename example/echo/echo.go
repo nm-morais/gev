@@ -7,10 +7,10 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/Allenxuxu/gev"
-	"github.com/Allenxuxu/gev/connection"
-	"github.com/Allenxuxu/gev/log"
 	"github.com/Allenxuxu/toolkit/sync/atomic"
+	"github.com/nm-morais/gev"
+	"github.com/nm-morais/gev/connection"
+	"github.com/nm-morais/gev/log"
 )
 
 type example struct {

@@ -5,12 +5,12 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/Allenxuxu/gev/log"
+	"github.com/nm-morais/gev/log"
 
 	_ "net/http/pprof"
 
-	"github.com/Allenxuxu/gev"
-	"github.com/Allenxuxu/gev/connection"
+	"github.com/nm-morais/gev"
+	"github.com/nm-morais/gev/connection"
 )
 
 type example struct {

@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/Allenxuxu/gev"
-	"github.com/Allenxuxu/gev/plugins/websocket"
-	"github.com/Allenxuxu/gev/plugins/websocket/ws"
+	"github.com/nm-morais/gev"
+	"github.com/nm-morais/gev/plugins/websocket"
+	"github.com/nm-morais/gev/plugins/websocket/ws"
 )
 
 // NewWebSocketServer 创建 WebSocket Server

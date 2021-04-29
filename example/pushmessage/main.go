@@ -6,8 +6,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Allenxuxu/gev"
-	"github.com/Allenxuxu/gev/connection"
+	"github.com/nm-morais/gev"
+	"github.com/nm-morais/gev/connection"
 )
 
 const clientsKey = "demo_push_message_key"
@@ -55,7 +55,7 @@ func (s *Server) RunPush() {
 		next = e.Next()
 
 		c := e.Value.(*connection.Connection)
-		_ = c.Send([]byte("hello\n"))
+		_ = c.Send([]byte("hello\n"), nil)
 	}
 }
 

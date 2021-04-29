@@ -5,10 +5,10 @@ import (
 	"log"
 	"strconv"
 
-	"github.com/Allenxuxu/gev"
-	"github.com/Allenxuxu/gev/connection"
-	pb "github.com/Allenxuxu/gev/example/protobuf/proto"
-	"github.com/Allenxuxu/gev/plugins/protobuf"
+	"github.com/nm-morais/gev"
+	"github.com/nm-morais/gev/connection"
+	pb "github.com/nm-morais/gev/example/protobuf/proto"
+	"github.com/nm-morais/gev/plugins/protobuf"
 	"google.golang.org/protobuf/proto"
 )
 

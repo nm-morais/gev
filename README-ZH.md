@@ -1,12 +1,12 @@
 # gev
 
-[![Github Actions](https://github.com/Allenxuxu/gev/workflows/CI/badge.svg)](https://github.com/Allenxuxu/gev/actions)
-[![Go Report Card](https://goreportcard.com/badge/github.com/Allenxuxu/gev)](https://goreportcard.com/report/github.com/Allenxuxu/gev)
+[![Github Actions](https://github.com/nm-morais/gev/workflows/CI/badge.svg)](https://github.com/nm-morais/gev/actions)
+[![Go Report Card](https://goreportcard.com/badge/github.com/nm-morais/gev)](https://goreportcard.com/report/github.com/nm-morais/gev)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a2a55fe9c0c443e198f588a6c8026cd0)](https://www.codacy.com/manual/Allenxuxu/gev?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Allenxuxu/gev&amp;utm_campaign=Badge_Grade)
-[![GoDoc](https://godoc.org/github.com/Allenxuxu/gev?status.svg)](https://godoc.org/github.com/Allenxuxu/gev)
-[![LICENSE](https://img.shields.io/badge/LICENSE-MIT-blue)](https://github.com/Allenxuxu/gev/blob/master/LICENSE)
+[![GoDoc](https://godoc.org/github.com/nm-morais/gev?status.svg)](https://godoc.org/github.com/nm-morais/gev)
+[![LICENSE](https://img.shields.io/badge/LICENSE-MIT-blue)](https://github.com/nm-morais/gev/blob/master/LICENSE)
 [![Code Size](https://img.shields.io/github/languages/code-size/Allenxuxu/gev.svg?style=flat)](https://img.shields.io/github/languages/code-size/Allenxuxu/gev.svg?style=flat)
-[![Sourcegraph](https://sourcegraph.com/github.com/Allenxuxu/gev/-/badge.svg)](https://sourcegraph.com/github.com/Allenxuxu/gev?badge)
+[![Sourcegraph](https://sourcegraph.com/github.com/nm-morais/gev/-/badge.svg)](https://sourcegraph.com/github.com/nm-morais/gev?badge)
 
 #### 中文 | [English](README.md)
 
@@ -80,7 +80,7 @@
 ## 安装
 
 ```bash
-go get -u github.com/Allenxuxu/gev
+go get -u github.com/nm-morais/gev
 ```
 
 ## 快速入门
@@ -94,8 +94,8 @@ import (
 	"flag"
 	"strconv"
 
-	"github.com/Allenxuxu/gev"
-	"github.com/Allenxuxu/gev/connection"
+	"github.com/nm-morais/gev"
+	"github.com/nm-morais/gev/connection"
 )
 
 type example struct{}
@@ -283,8 +283,8 @@ import (
 	"flag"
 	"strconv"
 
-	"github.com/Allenxuxu/gev"
-	"github.com/Allenxuxu/gev/connection"
+	"github.com/nm-morais/gev"
+	"github.com/nm-morais/gev/connection"
 )
 
 type example struct{}
@@ -336,9 +336,9 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/Allenxuxu/gev"
-	"github.com/Allenxuxu/gev/connection"
-	"github.com/Allenxuxu/gev/log"
+	"github.com/nm-morais/gev"
+	"github.com/nm-morais/gev/connection"
+	"github.com/nm-morais/gev/log"
 )
 
 type example struct {
@@ -390,8 +390,8 @@ package main
 import (
 	"log"
 
-	"github.com/Allenxuxu/gev"
-	"github.com/Allenxuxu/gev/connection"
+	"github.com/nm-morais/gev"
+	"github.com/nm-morais/gev/connection"
 	"github.com/Allenxuxu/toolkit/sync/atomic"
 )
 
@@ -472,8 +472,8 @@ package main
 
 import (
 	"container/list"
-	"github.com/Allenxuxu/gev"
-	"github.com/Allenxuxu/gev/connection"
+	"github.com/nm-morais/gev"
+	"github.com/nm-morais/gev/connection"
 	"log"
 	"sync"
 	"time"
@@ -578,10 +578,10 @@ import (
 	"math/rand"
 	"strconv"
 
-	"github.com/Allenxuxu/gev"
-	"github.com/Allenxuxu/gev/connection"
-	"github.com/Allenxuxu/gev/plugins/websocket/ws"
-	"github.com/Allenxuxu/gev/plugins/websocket/ws/util"
+	"github.com/nm-morais/gev"
+	"github.com/nm-morais/gev/connection"
+	"github.com/nm-morais/gev/plugins/websocket/ws"
+	"github.com/nm-morais/gev/plugins/websocket/ws/util"
 )
 
 type example struct{}
@@ -650,9 +650,9 @@ func main() {
 package main
 
 import (
-	"github.com/Allenxuxu/gev"
-	"github.com/Allenxuxu/gev/plugins/websocket"
-	"github.com/Allenxuxu/gev/plugins/websocket/ws"
+	"github.com/nm-morais/gev"
+	"github.com/nm-morais/gev/plugins/websocket"
+	"github.com/nm-morais/gev/plugins/websocket/ws"
 )
 
 // NewWebSocketServer 创建 WebSocket Server
@@ -675,10 +675,10 @@ import (
 	"log"
 	"strconv"
 
-	"github.com/Allenxuxu/gev"
-	"github.com/Allenxuxu/gev/connection"
-	pb "github.com/Allenxuxu/gev/example/protobuf/proto"
-	"github.com/Allenxuxu/gev/plugins/protobuf"
+	"github.com/nm-morais/gev"
+	"github.com/nm-morais/gev/connection"
+	pb "github.com/nm-morais/gev/example/protobuf/proto"
+	"github.com/nm-morais/gev/plugins/protobuf"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -748,8 +748,8 @@ import (
 	"net"
 	"os"
 
-	pb "github.com/Allenxuxu/gev/example/protobuf/proto"
-	"github.com/Allenxuxu/gev/plugins/protobuf"
+	pb "github.com/nm-morais/gev/example/protobuf/proto"
+	"github.com/nm-morais/gev/plugins/protobuf"
 	"google.golang.org/protobuf/proto"
 )
 

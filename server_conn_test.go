@@ -10,8 +10,8 @@ import (
 
 	"github.com/Allenxuxu/toolkit/sync"
 
-	"github.com/Allenxuxu/gev/connection"
-	"github.com/Allenxuxu/gev/log"
+	"github.com/nm-morais/gev/connection"
+	"github.com/nm-morais/gev/log"
 )
 
 type example2 struct {

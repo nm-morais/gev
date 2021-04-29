@@ -1,11 +1,11 @@
 package websocket
 
 import (
-	"github.com/Allenxuxu/gev/connection"
-	"github.com/Allenxuxu/gev/log"
-	"github.com/Allenxuxu/gev/plugins/websocket/ws"
-	"github.com/Allenxuxu/gev/plugins/websocket/ws/util"
 	"github.com/gobwas/pool/pbytes"
+	"github.com/nm-morais/gev/connection"
+	"github.com/nm-morais/gev/log"
+	"github.com/nm-morais/gev/plugins/websocket/ws"
+	"github.com/nm-morais/gev/plugins/websocket/ws/util"
 )
 
 // WSHandler WebSocket Server 注册接口

@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/Allenxuxu/gev/eventloop"
+	"github.com/nm-morais/gev/eventloop"
 )
 
 func TestLeastConnection(t *testing.T) {
